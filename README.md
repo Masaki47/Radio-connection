@@ -31,5 +31,3 @@ https://docs.google.com/spreadsheets/d/1ZFSO1eH0g_aLt1C63Ajq-8dqnIvIAAGcRqxGIwXG
 - JSライブラリ：jQuery
 - IDE：Cloud9
 
-
-# Radio-connection
