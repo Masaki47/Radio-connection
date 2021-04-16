@@ -10,18 +10,15 @@
   </head>
 
   <body>
-    <%  if member_signed_in? %>
-     <li>
-       <%= link_to "Member_Logout", destroy_member_session_path, method: :delete %>
-     </li>
-    <% else %>
-     <li>
-       <%= link_to "Member_Sign_up", new_member_registration_path %>
-     </li>
-     <Li>
-       <%= link_to "Member_Login", new_member_session_path %>
-     </Li>
-    <% end %>
-    <%= yield %>
+    <%= render 'layouts/header' %>
+      <main>
+        <div class="container">
+          <div class="row">
+            <p id="notice"><%= notice %></p>
+          </div>
+            <%= yield %>
+        </div>
+      </main>
+    <%= render 'layouts/footer' %>
   </body>
 </html>

@@ -1,0 +1,11 @@
+<h1>Posts#index</h1>
+<h1>Post of Radio</h1>
+<% @posts.each do |post| %>
+        <div class="post-item">
+          <section class="post-text">
+            <h3 class="post-text-heading"><%= link_to post.title, post_path(post) %></h3>
+            <p class="post-date"><%= post.created_at %></p>
+            <span class="category"><%= post.category %></span>
+          </section>
+        </div>
+      <% end %>
