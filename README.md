@@ -1,24 +1,35 @@
-# README
+# Radio connection
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## サイト概要
+好きなラジオ番組の感想や好きな理由などそのラジオに対する愛を投稿できる所謂snsのような使い方と
+好きな者同士で集まれるmeetupの様なアプリの融合型のサイト
+### サイトテーマ
+ラジオを通じて仲間を増やしたり共通の話題で盛り上がったり地域に捉われず繋がったりすることができるサイト
 
-Things you may want to cover:
+### テーマを選んだ理由
+ラジオを聴くのが好きでそう言った共通の趣味を持つ仲間で集まれたり情報交換ができると楽しいと思ったから。
+また深夜ラジオを聴く人は周りとの繋がりを心の奥底では求めているのにシャイでそれをうまく表現できない人が多いと思う。だからこそ共通の話題で盛り上がれて似たような趣向の人が気軽にチャットできるプラットフォームのような場所を作ろうと思った。
 
-* Ruby version
 
-* System dependencies
+### ターゲットユーザ
+- ラジオを聴くリスナー（若者が多めだが年齢層も幅広いと思う）
+- 新しくラジオを聞こうと思っている人
+### 主な利用シーン
+- ラジフェスなどのイベント開催時
+- それ以外の交友関係を広げる場
 
-* Configuration
+## 設計書
 
-* Database creation
 
-* Database initialization
+## 機能一覧
+https://docs.google.com/spreadsheets/d/1ZFSO1eH0g_aLt1C63Ajq-8dqnIvIAAGcRqxGIwXGalI/edit#gid=0
 
-* How to run the test suite
+## 開発環境
+- OS：Linux(CentOS)
+- 言語：HTML,CSS,JavaScript,Ruby,SQL
+- フレームワーク：Ruby on Rails
+- JSライブラリ：jQuery
+- IDE：Cloud9
 
-* Services (job queues, cache servers, search engines, etc.)
 
-* Deployment instructions
 
-* ...
