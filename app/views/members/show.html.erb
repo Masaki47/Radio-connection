@@ -1,0 +1,40 @@
+<h1>Members#show</h1>
+<div class="container">
+</br>
+
+  <div class="row">
+	<h2 class="mypage"><i class="fas fa-user"></i>マイページ</h2>
+  </div>
+  </br>
+  <p><strong>会員情報</strong>
+
+	  <%= link_to "編集する", edit_member_path, class:"btn btn-primary mypage_edit" %>
+	  <%= link_to "パスワードを変更する", edit_member_registration_path, class:"btn btn-primary" %></p>
+   </br>
+		<div class="row">
+			<div class="col-xs-8">
+				<table class="table">
+					<tr>
+						<td>氏名</td>
+						<td><%= current_member.name %></td>
+					</tr>
+					<tr>
+						<td>ユーザーネーム</td>
+						<td><%= current_member.username %></td>
+					</tr>
+					<tr>
+						<td>自己紹介</td>
+						<td><%= current_member.introduction %></td>
+					</tr>
+					<tr>
+						<td>生年月日</td>
+						<td><%= current_member.birthday %></td>
+					</tr>
+					<tr>
+						<td>メールアドレス</td>
+						<td><%= current_member.email %></td>
+					</tr>
+				</table>
+			</div><br><br>
+		</div>
+	</div>
