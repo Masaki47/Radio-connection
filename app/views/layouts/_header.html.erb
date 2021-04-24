@@ -13,7 +13,7 @@
        <%= link_to "Timeline", posts_path %>
      </li>
      <li>
-       <%= link_to "MyPage", posts_path %>
+       <%= link_to "MyPage", member_path(current_member) %>
      </li>
      <li>
        <%= link_to "Member_Logout", destroy_member_session_path, method: :delete %>
