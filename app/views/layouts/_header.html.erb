@@ -1,29 +1,43 @@
-<header>
-  <%  if member_signed_in? %>
-     <li>
-       <%= link_to "Home", posts_path %>
-     </li>
-     <li>
-       <%= link_to "Search", posts_path %>
-     </li>
-     <li>
-       <%= link_to "Notification", posts_path %>
-     </li>
-     <li>
-       <%= link_to "Timeline", posts_path %>
-     </li>
-     <li>
-       <%= link_to "MyPage", member_path(current_member) %>
-     </li>
-     <li>
-       <%= link_to "Member_Logout", destroy_member_session_path, method: :delete %>
-     </li>
-    <% else %>
-     <li>
-       <%= link_to "Member_Sign_up", new_member_registration_path %>
-     </li>
-     <Li>
-       <%= link_to "Member_Login", new_member_session_path %>
-     </Li>
-    <% end %>
-</header>
+    <header class="shadow-sm">
+      <nav class="navbar navbar-expand-lg navbar-light">
+        <div class="container">
+          <a class="navbar-brand p-3" href="/"></a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNavDropdown">
+            <ul class="navbar-nav ml-auto">
+            <header>
+              <%  if member_signed_in? %>
+                 <li class="nav-item">
+                   <%= link_to "Home", posts_path %>
+                 </li>
+                 <li>
+                   <%= link_to "Search", posts_path %>
+                 </li>
+                 <li>
+                   <%= link_to "Notification", posts_path %>
+                 </li>
+                 <li>
+                   <%= link_to "Timeline", posts_path %>
+                 </li>
+                 <li>
+                   <%= link_to "MyPage", member_path(current_member) %>
+                 </li>
+                 <li>
+                   <%= link_to "Member_Logout", destroy_member_session_path, method: :delete %>
+                 </li>
+                <% else %>
+                 <li>
+                   <%= link_to "Member_Sign_up", new_member_registration_path %>
+                 </li>
+                 <Li>
+                   <%= link_to "Member_Login", new_member_session_path %>
+                 </Li>
+                <% end %>
+            </header>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </header>
