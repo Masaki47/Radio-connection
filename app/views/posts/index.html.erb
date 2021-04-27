@@ -29,6 +29,7 @@
             <h3 class="post-text-heading"><%= link_to post.title, post_path(post) %></h3>
             <p class="post-date"><%= post.created_at %></p>
             <span class="category"><%= post.category %></span>
+            <p><%= link_to "#{post.favorites.count} いいね", post_path(post.id) %></p>
             <p><%= link_to "#{post.post_comments.count} コメント", post_path(post.id) %></p>
           </section>
         </div>
