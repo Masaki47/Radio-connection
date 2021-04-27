@@ -1,3 +1,8 @@
+<h2>Post Search</h2>
+<%= form_tag(root_path, method: :get) do %>
+  <%= text_field_tag :search %>
+  <%= submit_tag 'Search', name: nil %>
+<% end %>
 
 <h1>New Post</h1>
 <!-- form_with部分 -->

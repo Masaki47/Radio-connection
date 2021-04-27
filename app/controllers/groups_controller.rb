@@ -3,7 +3,7 @@ class GroupsController < ApplicationController
 
   def index
     @groups = Group.all.order(updated_at: :desc)
-    
+    @groups = Group.all.search(params[:search])
   end
 
   def new
