@@ -1,11 +1,13 @@
 class PostsController < ApplicationController
   def index
     @post = Post.new
-    @posts = Post.all.search(params[:search])
+    @posts = Post.all
+    @search_posts = Post.search(params[:search])
   end
 
   def show
     @post = Post.find(params[:id])
+    @post_comment = PostComment.new
   end
 
   def create
