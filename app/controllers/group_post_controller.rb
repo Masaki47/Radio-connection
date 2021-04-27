@@ -1,6 +1,6 @@
 class GroupPostController < ApplicationController
   def new
-    @grouppost = current_member.groupposts.new
+    
     @group = Group.find_by(id: params[:group_id])
   end
 

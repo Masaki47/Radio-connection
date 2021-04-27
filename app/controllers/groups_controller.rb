@@ -3,6 +3,7 @@ class GroupsController < ApplicationController
 
   def index
     @groups = Group.all.order(updated_at: :desc)
+    
   end
 
   def new
@@ -38,7 +39,7 @@ class GroupsController < ApplicationController
 
   private
   def group_params
-    params.require(:group).permit(:name, :member_id: [] )
+    params.require(:group).permit(:name, :member_id [] )
   end
 
   def set_group
@@ -48,6 +49,6 @@ class GroupsController < ApplicationController
   def grouppost_params
     params.require(:grouppost).permit(:content)
   end
-  end
+
 
 end

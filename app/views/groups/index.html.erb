@@ -1,0 +1,22 @@
+<h1>グループ一覧</h1>
+<div class="group_list">
+  <% @groups.each do |group| %>
+    <div class="group_index">
+      <% unless GroupMember.exists?(group_id: group.id, user_id: current_member.id) %>
+        <div class="participation">
+          <a href="#">参　加</a> ###このボタンをクリックすることで参加できるように実装したい
+        </div>
+      <% else %>
+        <div class="participation">
+          <a href="#">参加中</a>
+        </div>
+      <% end %>
+      <div class="group__name" >
+        <%= group.name %>
+      </div>
+      <div class="group_content">
+        <%= group.content %>
+      </div>
+    </div>
+  <% end %>
+</div>
