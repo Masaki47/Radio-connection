@@ -17,6 +17,12 @@
       </div>
     </div>
     <main>
+      <% if unchecked_notifications.any? %>
+        <i class="fa fa-circle" style="color: gold;"></i>
+      <% end %>
+      <li>
+          <%= link_to "NOTICE", notifications_path, class: "btn-default" %>
+      </li>
           <%= yield %>
     </main>
     <%= render 'layouts/footer' %>

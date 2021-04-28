@@ -9,6 +9,9 @@ Rails.application.routes.draw do
       get :following, :followers
   end
   resources :relationships, only: [:create, :destroy]
+  resources :notifications, only: [:index] do
+      delete 'destroy_all' => 'notifications#destroy_all', as: 'destroy_all'
+  end
   devise_for :admins
   devise_for :members
   root to: 'homes#top'

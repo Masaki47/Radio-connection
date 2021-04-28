@@ -5,7 +5,25 @@ class PostCommentsController < ApplicationController
     comment.post_id = post.id
     comment.save
     redirect_to post_path(post)
+
+    @favorite = Favorite.find(params[:favorite_id])
+    #投稿に紐づいたコメントを作成
+    @comment = @favorite.comments.build(comment_params)
+    @comment.member_id = current_member.id
+    @comment_favorite = @comment.favorite
+    if @comment.save
+      #通知の作成
+      @comment_favorite.create_notification_comment!(current_member, @comment.id)
+      render :index
+    end
+
+    @member = Member.find(params[:following_id])
+      current_member.follow(@member)
+      #通知の作成
+      @member.create_notification_follow!(current_member)
   end
+
+
 
   def destroy
     PostComment.find_by(id: params[:id], post_id: params[:post_id]).destroy

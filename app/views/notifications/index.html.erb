@@ -1,0 +1,15 @@
+<div class="container">
+<h3>通知</h3>
+
+        <i class="fas fa-trash" style="color: black;"></i>
+        <h7 style="color: black;">全削除</h7>
+
+    <hr>
+<% if @notifications.exists? %>
+    <div class="users-index">
+        <%= render @notifications %>
+    </div>
+<% else %>
+    <p>通知はありません</p>
+<% end %>
+</div>
