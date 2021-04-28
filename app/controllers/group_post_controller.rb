@@ -1,6 +1,5 @@
 class GroupPostController < ApplicationController
   def new
-    
     @group = Group.find_by(id: params[:group_id])
   end
 

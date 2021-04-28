@@ -34,21 +34,21 @@ ActiveRecord::Schema.define(version: 2021_04_28_051937) do
 
   create_table "group_users", force: :cascade do |t|
     t.integer "group_id"
-    t.integer "user_id"
+    t.integer "member_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["group_id"], name: "index_group_users_on_group_id"
-    t.index ["user_id"], name: "index_group_users_on_user_id"
+    t.index ["member_id"], name: "index_group_users_on_member_id"
   end
 
   create_table "groupposts", force: :cascade do |t|
     t.integer "group_id"
-    t.integer "user_id"
-    t.text "content"
+    t.integer "member_id"
+    t.string "message"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["group_id"], name: "index_groupposts_on_group_id"
-    t.index ["user_id"], name: "index_groupposts_on_user_id"
+    t.index ["member_id"], name: "index_groupposts_on_member_id"
   end
 
   create_table "groups", force: :cascade do |t|

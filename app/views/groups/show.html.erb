@@ -1,0 +1,7 @@
+<p><%= "グループ名：#{@group.name}" %></p>
+
+<input type="text" data-behavior="group_speaker" data-member="<%= current_member.id %>" data-group="<%= @group.id %>"> // 投稿フォーム
+
+<div id="groupposts">
+  <%= render "grouppost", collection: @groupposts %>
+</div>

@@ -5,13 +5,21 @@
   <%= submit_tag 'Search', name: nil %>
 <% end %>
 
+<h1>New Group</h1>
+<!-- form_with部分 -->
+<%= form_with model:@group, local:true do |f| %>
+  <h4>グループ名</h4>
+  <%= f.text_field :name %>
+  <%= f.submit '作成' %>
+<% end %>
+
 <h1>グループ一覧</h1>
 <div class="group_list">
   <% @groups.each do |group| %>
     <div class="group_index">
-      <% unless GroupMember.exists?(group_id: group.id, user_id: current_member.id) %>
+      <% unless GroupUser.exists?(group_id: group.id, member_id: current_member.id) %>
         <div class="participation">
-          <a href="#">参　加</a> ###このボタンをクリックすることで参加できるように実装したい
+          <a href="#">参　加</a>
         </div>
       <% else %>
         <div class="participation">
@@ -19,12 +27,18 @@
         </div>
       <% end %>
       <div class="group__name" >
-        <%= group.name %>
-      </div>
-      <div class="group_content">
-        <%= group.content %>
+        <%= link_to group.name, group_path(group) %>
       </div>
     </div>
   <% end %>
 </div>
+<h4>参加済グループ一覧</h4>
+  <% @groups.each do |room| %>
+    <%= @group.name %>
+  <% end %>
+
+  <h4>未参加グループ一覧</h4>
+  <% @nongroups.each do |room| %>
+    <%= @group.name %>
+  <% end %>
 </div>

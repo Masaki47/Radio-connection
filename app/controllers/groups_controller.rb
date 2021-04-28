@@ -2,17 +2,16 @@ class GroupsController < ApplicationController
   before_action :set_group, only: [:edit, :update]
 
   def index
-    @groups = Group.all.order(updated_at: :desc)
-    @groups = Group.all.search(params[:search])
-  end
-
-  def new
     @group = Group.new
-    @group.members << current_member
+    @groups = Group.all.order(updated_at: :desc)
+    #@groups = Group.all.search(params[:search])
+    @nongroups = Group.where(id: GroupUser.where.not(member_id: current_member.id).pluck(:id))
   end
 
   def create
-    if Group.create(group_params)
+    @group = Group.new(group_params)
+    if @group.save
+      @group.members << current_member
       redirect_to groups_path, notice: 'グループを作成しました'
     else
       render :new
@@ -20,13 +19,16 @@ class GroupsController < ApplicationController
   end
 
   def show
+    #@group = Group.find_by(id: params[:id])
+
+    #if !@group.members.include?(current_member)
+      #@group.members << current_member
+    #end
+
+    #@groupposts = Grouppost.where(group_id: @group.id).all
+
     @group = Group.find_by(id: params[:id])
-
-    if !@group.members.include?(current_member)
-      @group.members << current_member
-    end
-
-    @groupposts = Grouppost.where(group_id: @group.id).all
+    @groupposts = @group.groupposts
   end
 
   def update
@@ -39,7 +41,7 @@ class GroupsController < ApplicationController
 
   private
   def group_params
-    params.require(:group).permit(:name, :member_id [] )
+    params.require(:group).permit(:name)
   end
 
   def set_group

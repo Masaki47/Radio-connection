@@ -17,7 +17,7 @@
       </div>
     </div>
     <main>
-      <% if unchecked_notifications.any? %>
+      <% if member_signed_in? && unchecked_notifications.any? %>
         <i class="fa fa-circle" style="color: gold;"></i>
       <% end %>
       <li>
