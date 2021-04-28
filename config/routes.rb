@@ -5,7 +5,10 @@ Rails.application.routes.draw do
   end
   resources :groups, only: [:index, :new, :create, :edit, :update]
   resources :group_post
-  resources :members
+  resources :members do
+      get :following, :followers
+  end
+  resources :relationships, only: [:create, :destroy]
   devise_for :admins
   devise_for :members
   root to: 'homes#top'

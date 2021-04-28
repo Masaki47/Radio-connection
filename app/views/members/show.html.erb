@@ -3,7 +3,20 @@
 </br>
 
   <div class="row">
-	<h2 class="mypage"><i class="fas fa-user"></i>マイページ</h2>
+	<h2 class="mypage"><i class="fas fa-user"></i>マイページ </h2><br>
+	<div class="follower">
+      <%= link_to member_followers_path(@member.id) do %>
+          <h5 style="color: black;">フォロワー<%= @member.followers.count %>人</h5>
+      <% end %>
+    </div>
+    <div class="follow">
+      <%= link_to member_following_path(@member.id) do %>
+           <h5 style="color: black;">フォロー<%= @member.following.count %>人</h5>
+      <% end %>
+    </div>
+  <div>
+      <%= render "follow_form" %>
+  </div>
   </div>
   </br>
   <p><strong>会員情報</strong>

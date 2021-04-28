@@ -3,6 +3,20 @@ class MembersController < ApplicationController
     @member = current_member
   end
 
+  def following
+        #@memberがフォローしているユーザー
+        @member  = Member.find(params[:id])
+        @members = @member.following
+        render 'show_follow'
+  end
+
+  def followers
+      #@memberをフォローしているユーザー
+      @member  = Member.find(params[:id])
+      @members = @member.followers
+      render 'show_follower'
+  end
+
   def edit
     @member = current_member
   end
@@ -14,6 +28,9 @@ class MembersController < ApplicationController
     else
       render :edit
     end
+  end
+
+  def destroy
   end
 
   private
