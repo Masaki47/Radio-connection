@@ -10,6 +10,9 @@
   </head>
 
   <body>
+    <div class="container">
+    <h1>Radio connection</h1>
+    </div>
     <%= render 'layouts/header' %>
     <div class="container">
       <div class="row">
@@ -17,12 +20,6 @@
       </div>
     </div>
     <main>
-      <% if member_signed_in? && unchecked_notifications.any? %>
-        <i class="fa fa-circle" style="color: gold;"></i>
-      <% end %>
-      <li>
-          <%= link_to "NOTICE", notifications_path, class: "btn-default" %>
-      </li>
           <%= yield %>
     </main>
     <%= render 'layouts/footer' %>

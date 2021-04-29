@@ -12,4 +12,10 @@
 <% else %>
     <p>通知はありません</p>
 <% end %>
+<% if member_signed_in? && unchecked_notifications.any? %>
+        <i class="fa fa-circle" style="color: gold;"></i>
+      <% end %>
+      <li>
+          <%= link_to "NOTICE", notifications_path, class: "btn-default" %>
+      </li>
 </div>
