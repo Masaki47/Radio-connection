@@ -21,9 +21,5 @@ class FavoritesController < ApplicationController
 
   end
 
-  private
-
-  def post_params
-    @post = Post.find(params[:id])
-  end
+  
 end
