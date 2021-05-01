@@ -1,5 +1,5 @@
 class FavoritesController < ApplicationController
-  before_action :post_params
+  #before_action :post_params
 
   def create
     post = Post.find(params[:post_id])
@@ -21,5 +21,5 @@ class FavoritesController < ApplicationController
 
   end
 
-  
+
 end
