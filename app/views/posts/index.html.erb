@@ -1,38 +1,42 @@
 <div class="container">
-  <div class="col-md-3">
-<h2>Post Search</h2>
-<%= form_tag(root_path, method: :get) do %>
-  <%= text_field_tag :search %>
-  <%= submit_tag 'Search', name: nil %>
-<% end %>
+  <div class="row">
+    <div class="col-md-3">
+    <h2>Post Search</h2>
+    <%= form_tag(root_path, method: :get) do %>
+      <%= text_field_tag :search %>
+      <%= submit_tag 'Search', name: nil %>
+    <% end %>
 
-<h1>New Post</h1>
-<!-- form_with部分 -->
-<%= form_with model:@post, local:true do |f| %>
+    <h1>New Post</h1>
+    <!-- form_with部分 -->
+    <%= form_with model:@post, local:true do |f| %>
 
-  <h4>タイトル</h4>
-  <%= f.text_field :title %>
+      <h4>タイトル</h4>
+      <%= f.text_field :title %>
 
-  <h4>カテゴリー</h4>
-  <%= f.text_field :category %>
+      <h4>カテゴリー</h4>
+      <%= f.text_field :category %>
 
-  <h4>本文</h4>
-  <%= f.text_area :body %>
+      <h4>本文</h4>
+      <%= f.text_area :body %>
 
-  <%= f.submit '投稿' %>
+      <%= f.submit '投稿' %>
 
-<% end %>
-</div>
-<h1>Post of Radio</h1>
-<% @posts.each do |post| %>
-        <div class="post-item">
-          <section class="post-text">
-            <h3 class="post-text-heading"><%= link_to post.title, post_path(post) %></h3>
-            <p class="post-date"><%= post.created_at %></p>
-            <span class="category"><%= post.category %></span>
-            <p><%= link_to "#{post.favorites.count} いいね", post_path(post.id) %></p>
-            <p><%= link_to "#{post.post_comments.count} コメント", post_path(post.id) %></p>
-          </section>
-        </div>
-<% end %>
+    <% end %>
+    </div>
+    <div class="col-md-8 offset-md-1">
+    <h1>Post of Radio</h1>
+    <% @posts.each do |post| %>
+    <div class="post-item">
+      <section class="post-text">
+        <h3 class="post-text-heading"><%= link_to post.title, post_path(post) %></h3>
+        <p class="post-date"><%= post.created_at %></p>
+        <span class="category"><%= post.category %></span>
+        <p><%= link_to "#{post.favorites.count} いいね", post_path(post.id) %></p>
+        <p><%= link_to "#{post.post_comments.count} コメント", post_path(post.id) %></p>
+      </section>
+    </div>
+    <% end %>
+    </div>
+  </div>
 </div>
