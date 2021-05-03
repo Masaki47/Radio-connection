@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   devise_for :admins
   devise_for :members
-  resources :posts, only: [:index, :show, :edit] do
+  resources :posts, only: [:index, :create, :show, :edit] do
    resource :favorites, only: [:create, :destroy]
    resources :post_comments, only: [:create, :destroy]
   end
