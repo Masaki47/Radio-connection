@@ -2,7 +2,7 @@ class FavoritesController < ApplicationController
 
   def create
     post = Post.find(params[:post_id])
-    favorite = current_member.favorites.new(post_id: post.id, favorite_id: favorite.id)
+    @favorite = current_member.favorites.new(post_id: post.id, favorite_id: favorite.id)
     favorite.save
       @favorite = Favorite.find(params[:favorite_id])
       #通知の作成
