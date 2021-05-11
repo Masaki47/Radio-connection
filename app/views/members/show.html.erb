@@ -1,9 +1,7 @@
 <div class="container">
-</br>
-
   <div class="row">
 	<h2 class="mypage"><i class="fas fa-user"></i>マイページ </h2>
-	<div class="col-md-8 offset-md-1">"
+	<div class="col-md-8 offset-md-1">
 	<div class="follower">
       <%= link_to member_followers_path(@member.id) do %>
           <h5 style="color: black;">フォロワー<%= @member.followers.count %>人</h5>
