@@ -14,6 +14,5 @@ Rails.application.routes.draw do
   resources :notifications, only: [:index] do
       delete 'destroy_all' => 'notifications#destroy_all', as: 'destroy_all'
   end
-
   root to: 'homes#top'
 end
